@@ -7,13 +7,13 @@ from models import storage
 from models.state import State
 
 # Creating an instance of Flask class
-app = Flask('__name__')
+app = Flask('__name__', template_folder="web_flask/templates")
 
 @app.route("/states_list", strict_slashes=False)
 def get_states():
     """get states"""
-    states = list(storage.all(State).values())
-    #print(states)
+    states = storage.all(State).values()
+    # print(states)
     return render_template("7-states_list.html", states=states)
 
 

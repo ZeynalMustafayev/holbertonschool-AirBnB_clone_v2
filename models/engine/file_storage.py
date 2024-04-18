@@ -64,4 +64,4 @@ class FileStorage:
                 del FileStorage.__objects[key]
 
     def close(self):
-        self.close()
+        self.delete()
